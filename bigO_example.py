@@ -1,3 +1,6 @@
+"""A useless function to understand how time complexity is computed 
+using Big-O notation"""
+
 def useless_func(n):
   a=5
   b=6
