@@ -20,20 +20,25 @@ class Stack:
     return len(self.items)
 
 
-def binaryConverter(n,base):
+def baseConverter(n,base):
   """Method to convert the base of a number"""
   remstack = Stack()
+  digits = "0123456789ABCDEF" #for representing digits beyond base 10
+  
   while(n>0):
     rem = n%base
     n = n//base
     remstack.push(rem)
 
-  binConverted = ""
+  baseConverted = ""
 
   while(not remstack.isEmpty()):
-    binConverted+=str(remstack.pop())
+    baseConverted+=digits[remstack.pop()]
   
-  return binConverted
+  return baseConverted
 
   # testing the binaryConverter method.
-print(binaryConverter(233))
+print(baseConverter(233,2))
+print(baseConverter(25,8))
+print(baseConverter(256,16))
+print(baseConverter(26,26))
