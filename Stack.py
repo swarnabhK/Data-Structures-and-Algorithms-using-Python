@@ -1,25 +1,23 @@
 class Stack:
-  
+
   """Implementation of the stack data structure."""
   def __init__(self):
     self.items = []
-    self.size = 0
 
   def push(self,item):
     self.items.append(item)
-    self.size+=1
 
+  def isEmpty(self):
+    return self.items==[]
+    
   def pop(self):
-
-    popped_item = self.items[self.size-1]
-    self.size-=1
-    return popped_item
+    return self.items.pop()
 
   def peek(self):
-    return self.items[self.size-1]
+    return self.items[len(self.items)-1]
 
   def stack_size(self):
-    return self.size
+    return len(self.items)
   
 
 # testing the stack data structure.
